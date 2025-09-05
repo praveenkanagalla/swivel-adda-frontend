@@ -25,15 +25,12 @@ export class Header {
   ) { }
 
   ngOnInit() {
-    // ✅ Load user from localStorage
-    const savedUser = localStorage.getItem('user');
-    if (savedUser && savedUser !== 'undefined') {
-      try {
-        this.userData = JSON.parse(savedUser);
-      } catch (err) {
-        console.error('Failed to parse user:', savedUser);
-        this.userData = null;
-      }
+    // ✅ Load from localStorage keys
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+
+    if (name && email) {
+      this.userData = { name, email };
     }
 
     // ✅ Check if we should auto-show modal

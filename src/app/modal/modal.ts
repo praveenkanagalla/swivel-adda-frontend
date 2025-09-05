@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
-  standalone: true,  // ✅ Required for Angular 14+ standalone components
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './modal.html',
-  styleUrls: ['./modal.css']  // ✅ Correct property name
+  styleUrls: ['./modal.css']
 })
 export class Modal {
 
