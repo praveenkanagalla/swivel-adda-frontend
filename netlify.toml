@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist/swivel-adda-frontend/browser"
+
+# Redirect all routes to index.html (for Angular Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Example CORS setup for API calls to Flask backend on Render
+# Replace with your actual Render backend URL
+[[headers]]
+   for = "https://swivel-api.onrender.com/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept, Authorization"
